@@ -72,6 +72,12 @@ class Controles(unittest.TestCase):
     def test_reponse_appuyee_par_la_citation(self):
         self.assertTrue(evaluer.reponse_appuyee(question()))
 
+    def test_reponse_en_chiffres_et_citation_en_lettres(self):
+        # Cas rencontré sur une vraie sortie : réponse « 18 », cours « dix-huit ».
+        q = question(choix=["8", "16", "18", "20"], bonne_reponse=2, citation="pour un total de dix-huit critères élémentaires")
+        self.assertTrue(evaluer.reponse_appuyee(q))
+        self.assertFalse(evaluer.reponse_appuyee({**q, "bonne_reponse": 0}))
+
     def test_reponse_absente_de_la_citation(self):
         q = question(citation="Elle est surtout utilisée en inspection ergonomique")
         self.assertFalse(evaluer.reponse_appuyee(q))

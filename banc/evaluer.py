@@ -58,9 +58,22 @@ def normaliser(texte: str) -> str:
     return texte.strip(" .;:,!?")
 
 
+# Nombres écrits en lettres, ramenés à des chiffres : un modèle peut répondre « 18 »
+# quand le cours écrit « dix-huit ». Les formes composées passent avant les formes simples.
+NOMBRES = {
+    "dix-sept": "17", "dix-huit": "18", "dix-neuf": "19",
+    "zéro": "0", "deux": "2", "trois": "3", "quatre": "4", "cinq": "5", "six": "6", "sept": "7",
+    "huit": "8", "neuf": "9", "dix": "10", "onze": "11", "douze": "12", "treize": "13",
+    "quatorze": "14", "quinze": "15", "seize": "16", "vingt": "20", "trente": "30",
+    "quarante": "40", "cinquante": "50", "soixante": "60", "cent": "100",
+}
+_MOTIF_NOMBRES = re.compile(r"(?<![\w-])(" + "|".join(NOMBRES) + r")(?![\w-])")
+
+
 def mots(texte: str) -> list[str]:
     """Mots porteurs de sens : au moins trois lettres, ou un nombre, hors mots vides."""
-    trouves = re.findall(r"[a-zàâäçéèêëîïôöùûüœ]+|\d+", normaliser(texte))
+    texte = _MOTIF_NOMBRES.sub(lambda m: NOMBRES[m.group(1)], normaliser(texte))
+    trouves = re.findall(r"[a-zàâäçéèêëîïôöùûüœ]+|\d+", texte)
     return [m for m in trouves if (m.isdigit() or len(m) >= 3) and m not in MOTS_VIDES]
 
 
