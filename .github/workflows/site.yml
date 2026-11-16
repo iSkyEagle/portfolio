@@ -21,6 +21,8 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+      - name: Tests du banc d'évaluation (Python)
+        run: python3 -m unittest discover -s banc -v
       - name: Conserver le site construit
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
