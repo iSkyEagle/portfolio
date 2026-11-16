@@ -57,7 +57,7 @@ export function Skills() {
                     Voir {count === 1 ? 'la fiche liée' : `les ${count} fiches liées`}
                   </Link>
                   {demo && (
-                    <Link className="btn" to="/demos">
+                    <Link className="btn" to={demo.route ?? '/demos'}>
                       <span>Démo : {demo.title}</span>
                       {demo.state === 'preparation' && <span className="soon">en préparation</span>}
                     </Link>

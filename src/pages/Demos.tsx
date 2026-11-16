@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { demos } from '../data/demos';
+import { demos, orderedDemos } from '../data/demos';
 import { getSkill } from '../data/skills';
 import { usePageTitle } from '../hooks/usePageTitle';
 
@@ -26,7 +26,7 @@ export function Demos() {
       </div>
 
       <div className="demos">
-        {demos.map((d) => (
+        {orderedDemos.map((d) => (
           <article className="demo" key={d.id} aria-labelledby={`${d.id}-titre`}>
             <div className="sheet-top">
               <span className={`status ${d.state === 'disponible' ? 'done' : 'wip'}`}>
@@ -58,6 +58,11 @@ export function Demos() {
                 ) : null;
               })}
             </ul>
+            {d.route && (
+              <Link className="btn primary demo-go" to={d.route} aria-label={`Lancer la démo : ${d.title}`}>
+                Lancer la démo →
+              </Link>
+            )}
           </article>
         ))}
       </div>

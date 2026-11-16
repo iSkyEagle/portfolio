@@ -13,6 +13,8 @@ export interface Demo {
   /** Nature des données, dite sans détour. */
   note: string;
   skills: SkillId[];
+  /** Adresse de la démo, quand elle est disponible. */
+  route?: string;
 }
 
 export const demos: Demo[] = [
@@ -29,8 +31,9 @@ export const demos: Demo[] = [
   {
     id: 'reservation',
     title: 'Outil interne de réservation',
-    state: 'preparation',
-    action: 'Vous réservez un véhicule, puis vous passez côté administrateur pour valider la demande.',
+    state: 'disponible',
+    route: '/demos/reservation',
+    action: 'Vous réservez un véhicule, puis vous passez côté responsable pour valider la demande.',
     shows: "Le parcours complet d'un outil utilisé au quotidien par une équipe.",
     note: 'Reproduction autonome, avec des véhicules et des réservations fictifs.',
     skills: ['dev', 'fh'],
@@ -54,6 +57,11 @@ export const demos: Demo[] = [
     skills: ['agents'],
   },
 ];
+
+/** Les démos disponibles d'abord. */
+export const orderedDemos: Demo[] = [...demos].sort(
+  (a, b) => Number(b.state === 'disponible') - Number(a.state === 'disponible'),
+);
 
 export function getDemo(id: string): Demo | undefined {
   return demos.find((d) => d.id === id);

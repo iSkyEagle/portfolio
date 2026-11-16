@@ -18,6 +18,7 @@ src/
   data/        contenu du site (compétences, fiches, démos, parcours)
   components/  mise en page, fiche de projet, contact
   pages/       une page par rubrique
+  demos/       démonstrations interactives (logique séparée de l'affichage et testée à part)
   hooks/       thème clair ou sombre, titre de l'onglet
 ```
 
