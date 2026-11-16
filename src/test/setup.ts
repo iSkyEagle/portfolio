@@ -1,0 +1,13 @@
+import '@testing-library/jest-dom/vitest';
+import { afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+
+afterEach(() => {
+  cleanup();
+  localStorage.clear();
+  document.documentElement.removeAttribute('data-theme');
+});
+
+// jsdom n'implémente pas ces API du navigateur.
+Element.prototype.scrollIntoView = () => {};
+window.scrollTo = () => {};
