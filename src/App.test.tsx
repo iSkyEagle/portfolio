@@ -53,6 +53,17 @@ describe('navigation', () => {
   });
 });
 
+describe('démos', () => {
+  it('ouvre les démos disponibles et annonce celles en préparation sans lien', () => {
+    renderAt('/demos');
+    expect(screen.getByText('2 disponibles sur 3')).toBeInTheDocument();
+    const prep = screen.getByRole('article', { name: 'Plateforme de révision' });
+    expect(within(prep).getByText('En préparation')).toBeInTheDocument();
+    expect(within(prep).queryByRole('link', { name: /Lancer/ })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: "Lancer la démo : Banc d'évaluation de QCM générés" })).toHaveAttribute('href', '/demos/banc');
+  });
+});
+
 describe('compétences', () => {
   it('liste chaque compétence avec ses preuves', () => {
     renderAt('/competences');

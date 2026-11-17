@@ -58,6 +58,7 @@ export function Demos() {
                 ) : null;
               })}
             </ul>
+            {!d.route && <p className="demo-soon">Pas encore accessible.</p>}
             {d.route && (
               <Link className="btn primary demo-go" to={d.route} aria-label={`Lancer la démo : ${d.title}`}>
                 Lancer la démo →

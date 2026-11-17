@@ -260,6 +260,7 @@ details > summary:hover { text-decoration: underline; text-underline-offset: 3px
 .vstatus .busy { color: var(--danger); border-style: dashed; }
 .demo-foot { margin-top: 1rem; font-size: 0.875rem; color: var(--muted); max-width: 70ch; }
 .demo-go { align-self: flex-start; }
+.demo-soon { margin-top: auto; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--muted); }
 .label a { color: inherit; text-underline-offset: 3px; }
 
 /* Banc d'évaluation */

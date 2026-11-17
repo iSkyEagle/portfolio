@@ -41,7 +41,6 @@ export const skills: Skill[] = [
         to: '/parcours',
       },
     ],
-    demoId: 'workflow',
   },
   {
     id: 'modeles',
@@ -73,7 +72,7 @@ export const skills: Skill[] = [
         to: '/projets/simulation-payne',
       },
     ],
-    demoId: 'revision',
+    demoId: 'banc',
   },
   {
     id: 'evaluation',

@@ -1,6 +1,7 @@
 import type { SkillId } from './skills';
 
 export type DemoState = 'disponible' | 'preparation';
+// Une démo « en préparation » est annoncée mais ne s'ouvre pas encore : elle n'a pas de route.
 
 export interface Demo {
   id: string;
@@ -45,17 +46,8 @@ export const demos: Demo[] = [
     state: 'preparation',
     action: "Vous ouvrez un cours d'exemple et vous voyez chaque question reliée au passage dont elle vient.",
     shows: 'Un modèle contraint à sa source, quand la fiabilité du contenu compte.',
-    note: 'Questions générées à l\'avance à partir d\'un texte libre de droits.',
+    note: 'En cours de reprise avec des modèles plus récents.',
     skills: ['modeles', 'evaluation'],
-  },
-  {
-    id: 'workflow',
-    title: "Workflow d'agents",
-    state: 'preparation',
-    action: "Vous rejouez le traitement d'un document étape par étape et vous voyez ce que l'agent garde en mémoire.",
-    shows: "Un agent qui conserve son contexte d'une étape à l'autre.",
-    note: "Rejeu d'une exécution enregistrée.",
-    skills: ['agents'],
   },
 ];
 
