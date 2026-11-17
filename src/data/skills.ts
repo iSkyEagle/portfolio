@@ -52,9 +52,14 @@ export const skills: Skill[] = [
     tools: ['PyTorch', 'Mistral', 'Ollama', 'API Gemini'],
     proofs: [
       {
-        label: "Assistant d'orientation médicale",
+        label: "Banc d'évaluation",
         claim:
-          "Un prompt système qui interdit le diagnostic et oriente vers les urgences, d'abord avec l'API Gemini puis avec Mistral en local via Ollama.",
+          'Mistral et Qwen 2.5 exécutés en local avec Ollama, avec la même consigne et les mêmes réglages, sur 24 questions générées à partir d\'un cours.',
+        to: '/demos/banc',
+      },
+      {
+        label: "Assistant d'orientation médicale",
+        claim: "Un prompt système qui interdit le diagnostic et oriente vers les urgences, avec l'API Gemini.",
         to: '/projets/assistant-medical',
       },
       {
@@ -78,6 +83,12 @@ export const skills: Skill[] = [
       "Je vérifie ce qu'un système fait réellement avant de le croire : métriques définies à l'avance, protocole expérimental, audit des résultats trop beaux.",
     tools: ['Protocole expérimental', 'Métriques', 'Python'],
     proofs: [
+      {
+        label: "Banc d'évaluation",
+        claim:
+          "Cinq contrôles automatiques et une notation humaine à l'aveugle, croisés : ils ne concordent que sur 62 % des questions.",
+        to: '/demos/banc',
+      },
       {
         label: 'Simulation de décision selon Payne',
         claim:

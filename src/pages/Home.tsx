@@ -61,8 +61,8 @@ export function Home() {
             <span className="label">Je veux tester</span>
             <span className="path-title">Les démonstrations</span>
             <span className="path-text">
-              Des outils à manipuler dans le navigateur. Le premier : réserver un véhicule, puis valider la demande côté
-              responsable.
+              Des outils à manipuler dans le navigateur. Juger des questions écrites par des modèles de langage, ou réserver
+              un véhicule puis valider la demande côté responsable.
             </span>
             <span className="path-go" aria-hidden="true">
               Essayer →

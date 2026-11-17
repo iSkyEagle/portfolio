@@ -1,0 +1,151 @@
+{
+  "notes": {
+    "q5b844d0f": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:25:42"
+    },
+    "q1ab76e78": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:26:24"
+    },
+    "q081d58e6": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:27:06"
+    },
+    "q14ab9bf0": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:27:33"
+    },
+    "qeaee7fe1": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:28:02"
+    },
+    "q352345dd": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:28:24"
+    },
+    "qf2b20bd3": {
+      "juste": false,
+      "unique": false,
+      "verdict": "corriger",
+      "commentaire": "La réponse attendue est la compatibilité. Le modèle n'a que repéré la réponse dans la question.",
+      "date": "2026-11-17T21:30:09"
+    },
+    "qcf97a38f": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:30:22"
+    },
+    "qae89cf2c": {
+      "juste": false,
+      "unique": false,
+      "verdict": "corriger",
+      "commentaire": "La question est bonne, pas la réponse.",
+      "date": "2026-11-17T21:31:07"
+    },
+    "qc09ba69c": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:31:21"
+    },
+    "q6023e405": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:31:55"
+    },
+    "q71416ee4": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:32:17"
+    },
+    "qc30a1c84": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:32:46"
+    },
+    "qa56e9cd0": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:33:06"
+    },
+    "qccd1c59c": {
+      "juste": true,
+      "unique": true,
+      "verdict": "corriger",
+      "commentaire": "La réponse est simplement l'exemple fourni mais il peut y en avoir d'autres.",
+      "date": "2026-11-17T21:33:56"
+    },
+    "q67e2344a": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:34:22"
+    },
+    "qf81b69a1": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:34:44"
+    },
+    "qeb0905a4": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:35:01"
+    },
+    "qe69768e4": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:35:19"
+    },
+    "qa890faf1": {
+      "juste": true,
+      "unique": true,
+      "verdict": "garder",
+      "commentaire": "",
+      "date": "2026-11-17T21:35:36"
+    },
+    "q1d8c48a5": {
+      "juste": true,
+      "unique": true,
+      "verdict": "corriger",
+      "commentaire": "La question est mal formulée.",
+      "date": "2026-11-17T21:36:12"
+    }
+  }
+}

@@ -3,7 +3,7 @@ import { demos, getDemo } from './demos';
 import { filterProjects, getProject, projects } from './projects';
 import { skills } from './skills';
 
-const routes = ['/', '/competences', '/demos', '/projets', '/parcours'];
+const routes = ['/', '/competences', '/demos', '/demos/banc', '/demos/reservation', '/projets', '/parcours'];
 
 describe('cohérence des données', () => {
   it('donne un identifiant unique à chaque fiche, compétence et démo', () => {

@@ -285,7 +285,7 @@ details > summary:hover { text-decoration: underline; text-underline-offset: 3px
 .checks .ok { color: var(--done); }
 .checks .ko { color: var(--danger); border-style: dashed; }
 .bench-nav { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.bench-results { display: flex; flex-direction: column; gap: 1.25rem; }
+.bench-results { display: flex; flex-direction: column; gap: 1.25rem; scroll-margin-top: 4.5rem; }
 .table-wrap { width: 100%; overflow-x: auto; }
 .bench-table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
 .bench-table th, .bench-table td { text-align: left; padding: 0.55rem 0.9rem 0.55rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }

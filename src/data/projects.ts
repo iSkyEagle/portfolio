@@ -274,7 +274,7 @@ export const projects: Project[] = [
       },
       {
         term: 'Choix',
-        text: "Gemini plutôt qu'une API payante, pour le coût. Une version locale avec Mistral via Ollama a suivi.",
+        text: "Gemini plutôt qu'une API payante, pour le coût.",
       },
     ],
     skills: ['modeles', 'dev'],

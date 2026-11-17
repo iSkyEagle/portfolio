@@ -21,7 +21,8 @@ export const demos: Demo[] = [
   {
     id: 'banc',
     title: "Banc d'évaluation de QCM générés",
-    state: 'preparation',
+    state: 'disponible',
+    route: '/demos/banc',
     action:
       'Vous notez quelques questions générées par des modèles exécutés en local, puis vous comparez votre jugement aux mesures automatiques.',
     shows: "Une évaluation d'I.A qui croise des métriques automatiques et un protocole d'évaluation humaine.",

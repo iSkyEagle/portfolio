@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import brut from '../../../banc/resultats.json';
 import { usePageTitle } from '../../hooks/usePageTitle';
@@ -33,6 +33,15 @@ export function BenchDemo({ results = brut as unknown as BenchResults }: Props) 
   const [index, setIndex] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const noted = hasNotes(results);
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  // Les résultats remplacent la question : on les amène à l'écran et on y place le focus.
+  useEffect(() => {
+    if (showResults && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ block: 'start' });
+      resultsRef.current.focus({ preventScroll: true });
+    }
+  }, [showResults]);
 
   const header = (
     <div className="head">
@@ -135,7 +144,7 @@ export function BenchDemo({ results = brut as unknown as BenchResults }: Props) 
       )}
 
       {showResults && (
-        <div className="bench-results">
+        <div className="bench-results" ref={resultsRef} tabIndex={-1} aria-label="Résultats du banc">
           {done > 0 && (
             <div className="demo-app bench">
               <h2>Votre jugement</h2>

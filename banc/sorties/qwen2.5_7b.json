@@ -1,0 +1,67 @@
+{
+  "modele": {
+    "nom": "qwen2.5:7b",
+    "empreinte": "845dbda0ea48",
+    "taille_go": 4.7,
+    "parametres": "7.6B",
+    "quantification": "Q4_K_M"
+  },
+  "ollama": "0.40.16",
+  "reglages": {
+    "temperature": 0,
+    "seed": 42,
+    "num_predict": 1200
+  },
+  "questions_par_passage": 2,
+  "date": "2026-11-16T22:06:51",
+  "appels": [
+    {
+      "passage_id": "p1",
+      "brut": "{\n  \"questions\": [\n    {\n      \"question\": \"Quand ont-ils été proposés les critères ergonomiques ?\",\n      \"choix\": [\n        \"1985\",\n        \"1990\",\n        \"1993\",\n        \"1998\"\n      ],\n      \"bonne_reponse\": 2,\n      \"citation\": \"Les critères ergonomiques ont été proposés par Christian Bastien et Dominique Scapin dans un rapport technique de l'INRIA publié en 1993.\"\n    },\n    {\n      \"question\": \"Quel est le nombre total de critères élémentaires dans la grille ?\",\n      \"choix\": [\n        \"8\",\n        \"16\",\n        \"18\",\n        \"20\"\n      ],\n      \"bonne_reponse\": 2,\n      \"citation\": \"La grille compte huit critères principaux, dont certains se divisent en sous-critères, pour un total de dix-huit critères élémentaires.\"\n    }\n  ]\n}",
+      "duree_s": 121.0,
+      "jetons_generes": 226,
+      "duree_generation_ns": 31555857000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p2",
+      "brut": "{\n  \"questions\": [\n    {\n      \"question\": \"Quel sous-critère du guidage indique à l'utilisateur ce qu'il peut faire et où il se trouve ?\",\n      \"choix\": [\n        \"A) Le groupement\",\n        \"B) L'incitation\",\n        \"C) Le feedback immédiat\",\n        \"D) La lisibilité\"\n      ],\n      \"bonne_reponse\": 1,\n      \"citation\": \"L'incitation indique à l'utilisateur ce qu'il peut faire et où il se trouve, par exemple avec le libellé d'un champ ou le format attendu d'une date.\"\n    },\n    {\n      \"question\": \"Quel sous-critère du guidage concerne les caractéristiques d'affichage qui facilitent la lecture ?\",\n      \"choix\": [\n        \"A) Le groupement\",\n        \"B) L'incitation\",\n        \"C) Le feedback immédiat\",\n        \"D) La lisibilité\"\n      ],\n      \"bonne_reponse\": 3,\n      \"citation\": \"La lisibilité concerne les caractéristiques d'affichage qui facilitent la lecture, comme la taille des caractères ou le contraste entre le texte et le fond.\"\n    }\n  ]\n}",
+      "duree_s": 49.2,
+      "jetons_generes": 276,
+      "duree_generation_ns": 37963417000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p3",
+      "brut": "{\n  \"questions\": [\n    {\n      \"question\": \"Qu'est-ce que la brièveté dans le contexte de la charge de travail ?\",\n      \"choix\": [\n        \"La brièveté est l'ajout d'informations inutiles sur l'écran.\",\n        \"La brièveté réduit le travail de lecture et de saisie en limitant les éléments individuels.\",\n        \"La brièveté augmente le nombre d'étapes nécessaires pour atteindre un but.\",\n        \"La brièveté n'affecte pas l'effort perceptif et cognitif de l'utilisateur.\"\n      ],\n      \"bonne_reponse\": 1,\n      \"citation\": \"La brièveté limite le travail de lecture et de saisie : la concision porte sur les éléments individuels, comme un libellé court, et les actions minimales réduisent le nombre d'étapes nécessaires pour atteindre un but.\"\n    },\n    {\n      \"question\": \"Quel est l'effet d'une densité informationnelle excessive sur l'utilisateur ?\",\n      \"choix\": [\n        \"Elle augmente l'effort perceptif et cognitif de l'utilisateur.\",\n        \"Elle réduit le temps nécessaire pour atteindre un but.\",\n        \"Elle n'affecte pas la charge de travail de l'utilisateur.\",\n        \"Elle améliore la lisibilité de l'écran.\"\n      ],\n      \"bonne_reponse\": 0,\n      \"citation\": \"une page qui affiche trop d'informations sans rapport avec la tâche ralentit l'utilisateur et augmente le risque d'erreur.\"\n    }\n  ]\n}",
+      "duree_s": 60.0,
+      "jetons_generes": 364,
+      "duree_generation_ns": 48137762000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p4",
+      "brut": "{\n  \"questions\": [\n    {\n      \"question\": \"Quel type de contrôle est basé sur l'exécution des actions demandées par l'utilisateur au moment où il les demande ?\",\n      \"choix\": [\n        \"Le contrôle implicite\",\n        \"Le contrôle explicite\",\n        \"L'adaptabilité\",\n        \"La flexibilité\"\n      ],\n      \"bonne_reponse\": 1,\n      \"citation\": \"Le contrôle explicite veut que le système n'exécute que les actions demandées par l'utilisateur, au moment où il les demande.\"\n    },\n    {\n      \"question\": \"Quel aspect de l'adaptabilité concerne la capacité du système à offrir plusieurs façons d'atteindre un même objectif ?\",\n      \"choix\": [\n        \"La flexibilité\",\n        \"La prise en compte de l'expérience de l'utilisateur\",\n        \"Le contrôle explicite\",\n        \"Le contrôle utilisateur\"\n      ],\n      \"bonne_reponse\": 0,\n      \"citation\": \"Elle comprend la flexibilité, qui offre plusieurs façons d'atteindre un même objectif,\"\n    }\n  ]\n}",
+      "duree_s": 46.3,
+      "jetons_generes": 244,
+      "duree_generation_ns": 34186341000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p5",
+      "brut": "{\n  \"questions\": [\n    {\n      \"question\": \"Quel est le but de la protection contre les erreurs selon le passage ?\",\n      \"choix\": [\n        \"A) Corriger les erreurs après qu'elles se soient produites\",\n        \"B) Prévenir les erreurs de saisie ou les actions aux conséquences graves\",\n        \"C) Donner des messages d'erreur pertinents et lisibles\",\n        \"D) Mettre à disposition des moyens simples pour corriger les erreurs\"\n      ],\n      \"bonne_reponse\": 1,\n      \"citation\": \"La protection contre les erreurs détecte et prévient les erreurs de saisie ou les actions aux conséquences graves, par exemple en demandant une confirmation avant une suppression définitive.\"\n    },\n    {\n      \"question\": \"Quel aspect des messages d'erreur est souligné dans le passage ?\",\n      \"choix\": [\n        \"A) La rapidité de leur affichage\",\n        \"B) Leur pertinence, leur lisibilité et leur exactitude\",\n        \"C) Leur couleur et leur forme\",\n        \"D) Leur nombre\"\n      ],\n      \"bonne_reponse\": 1,\n      \"citation\": \"La qualité des messages d'erreur porte sur leur pertinence, leur lisibilité et leur exactitude : un bon message dit ce qui s'est passé et comment corriger.\"\n    }\n  ]\n}",
+      "duree_s": 55.1,
+      "jetons_generes": 314,
+      "duree_generation_ns": 43059716000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p6",
+      "brut": "{\n  \"questions\": [\n    {\n      \"question\": \"Quel est le critère qui concerne l'accord entre les caractéristiques de l'utilisateur, de sa tâche et l'organisation des entrées, des sorties et du dialogue ?\",\n      \"choix\": [\n        \"A) L'homogénéité\",\n        \"B) La signifiance des codes et dénominations\",\n        \"C) La compatibilité\",\n        \"D) L'harmonie des couleurs\"\n      ],\n      \"bonne_reponse\": 2,\n      \"citation\": \"La compatibilité désigne l'accord entre les caractéristiques de l'utilisateur, celles de sa tâche et l'organisation des entrées, des sorties et du dialogue.\"\n    },\n    {\n      \"question\": \"Quel exemple est donné pour illustrer le critère de compatibilité ?\",\n      \"choix\": [\n        \"A) Un bouton qui change de couleur selon le contexte\",\n        \"B) Un code qui change de signification selon le contexte\",\n        \"C) Une saisie qui suit l'ordre du formulaire papier habituel\",\n        \"D) Un emplacement de bouton qui varie d'un écran à l'autre\"\n      ],\n      \"bonne_reponse\": 2,\n      \"citation\": \"Une saisie qui suit l'ordre du formulaire papier dont l'utilisateur a l'habitude en est un exemple.\"\n    }\n  ]\n}",
+      "duree_s": 60.5,
+      "jetons_generes": 324,
+      "duree_generation_ns": 46366194000,
+      "format_demande": "schema"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "modele": {
+    "nom": "mistral:latest",
+    "empreinte": "6577803aa9a0",
+    "taille_go": 4.4,
+    "parametres": "7.2B",
+    "quantification": "Q4_K_M"
+  },
+  "ollama": "0.40.16",
+  "reglages": {
+    "temperature": 0,
+    "seed": 42,
+    "num_predict": 1200
+  },
+  "questions_par_passage": 2,
+  "date": "2026-11-16T23:54:13",
+  "appels": [
+    {
+      "passage_id": "p1",
+      "brut": "{\"questions\": [\n  {\n    \"question\": \"Quels sont les auteurs du rapport technique de l'INRIA publié en 1993 sur les critères ergonomiques pour concevoir et évaluer des interfaces entre une personne et un logiciel?\",\n    \"choix\": [\"A) Christian Bastien et Dominique Scapin\", \"B) Pierre Dupont et Jean-Pierre Marzio\", \"C) Alain Bensoussan et François Baccelli\", \"D) Jacques-Yves Lévy et Michel Siffre\"],\n    \"bonne_reponse\": 0,\n    \"citation\": \"Les critères ergonomiques ont été proposés par Christian Bastien et Dominique Scapin dans un rapport technique de l'INRIA publié en 1993.\"\n  },\n  {\n    \"question\": \"Quel est le nombre de critères principaux proposés par Christian Bastien et Dominique Scapin dans leur rapport technique de l'INRIA?\",\n    \"choix\": [\"A) Huit\", \"B) Dix\", \"C) Quatorze\", \"D) Seize\"],\n    \"bonne_reponse\": 0,\n    \"citation\": \"La grille compte huit critères principaux.\"\n  }\n]}",
+      "duree_s": 65.2,
+      "jetons_generes": 303,
+      "duree_generation_ns": 41109759000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p2",
+      "brut": "{\"questions\": [\n  {\n    \"question\": \"Quel des quatre sous-critères du guidage concerne la réponse sans délai à chaque action de l'utilisateur ?\",\n    \"choix\": [\"Incitation\", \"Groupement et distinction\", \"Feedback immédiat\", \"Lisibilité\"],\n    \"bonne_reponse\": 2,\n    \"citation\": \"Le feedback immédiat répond sans délai à chaque action de l'utilisateur.\"\n  },\n  {\n    \"question\": \"Quel des quatre sous-critères du guidage concerne les caractéristiques d'affichage qui facilitent la lecture ?\",\n    \"choix\": [\"Incitation\", \"Groupement et distinction\", \"Feedback immédiat\", \"Lisibilité\"],\n    \"bonne_reponse\": 4,\n    \"citation\": \"La lisibilité concerne les caractéristiques d'affichage qui facilitent la lecture, comme la taille des caractères ou le contraste entre le texte et le fond.\"\n  }\n]}",
+      "duree_s": 47.9,
+      "jetons_generes": 256,
+      "duree_generation_ns": 34062021999,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p3",
+      "brut": "{\"questions\": [\n  {\n    \"question\": \"Quel sous-criterion de la charge de travail concerne l'ensemble de l'écran ?\",\n    \"choix\": [\n      \"La brièveté limite le travail de lecture et de saisie\",\n      \"La concision porte sur les éléments individuels\",\n      \"Les actions minimales réduisent le nombre d'étapes nécessaires pour atteindre un but\",\n      \"Une page qui affiche trop d'informations sans rapport avec la tâche ralentit l'utilisateur et augmente le risque d'erreur\"\n    ],\n    \"bonne_reponse\": 3,\n    \"citation\": \"Une page qui affiche trop d'informations sans rapport avec la tâche ralentit l'utilisateur et augmente le risque d'erreur.\"\n  },\n  {\n    \"question\": \"Quel est le but de réduire la charge de travail ?\",\n    \"choix\": [\n      \"Tout supprimer de l'interface\",\n      \"Afficher que ce qui sert la tâche en cours\",\n      \"Ralentir l'utilisateur et augmenter le risque d'erreur\",\n      \"Augmenter le travail de lecture et de saisie de l'utilisateur\"\n    ],\n    \"bonne_reponse\": 1,\n    \"citation\": \"Réduire la charge de travail ne veut donc pas tout supprimer, mais n'afficher que ce qui sert la tâche en cours.\"\n  }\n]}",
+      "duree_s": 66.5,
+      "jetons_generes": 384,
+      "duree_generation_ns": 52186038000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p4",
+      "brut": "{\"questions\": [\n  {\n    \"question\": \"Qu'est-ce que le contrôle explicite?\",\n    \"choix\": [\n      \"Le contrôle explicite est la capacité du système à réagir selon le contexte et selon les besoins de l'utilisateur.\",\n      \"Le contrôle explicite est la capacité du système à réagir selon le contexte, mais uniquement pour les débutants.\",\n      \"Le contrôle explicite est la capacité du système à réagir selon les besoins de l'utilisateur, mais uniquement pour les habitués.\",\n      \"Le contrôle explicite veut que le système n'exécute que les actions demandées par l'utilisateur, au moment où il les demande.\"\n    ],\n    \"bonne_reponse\": 4,\n    \"citation\": \"Le contrôle explicite veut que le système n'exécute que les actions demandées par l'utilisateur, au moment où il les demande.\"\n  },\n  {\n    \"question\": \"Qu'est-ce que l'adaptabilité?\",\n    \"choix\": [\n      \"L'adaptabilité est la capacité du système à réagir selon le contexte et selon les besoins de l'utilisateur.\",\n      \"L'adaptabilité est la capacité du système à réagir selon le contexte, mais uniquement pour les débutants.\",\n      \"L'adaptabilité est la capacité du système à réagir selon les besoins de l'utilisateur, mais uniquement pour les habitués.\",\n      \"L'adaptabilité désigne la capacité du système à réagir selon le contexte et selon les besoins de l'utilisateur, et comprend la flexibilité et la prise en compte de l'expérience de l'utilisateur.\"\n    ],\n    \"bonne_reponse\": 4,\n    \"citation\": \"L'adaptabilité désigne la capacité du système à réagir selon le contexte et selon les besoins de l'utilisateur, et comprend la flexibilité et la prise en compte de l'expérience de l'utilisateur.\"\n  }\n]}",
+      "duree_s": 92.2,
+      "jetons_generes": 546,
+      "duree_generation_ns": 77464358000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p5",
+      "brut": "{\"questions\": [\n  {\n    \"question\": \"Quel des trois sous-critères de la gestion des erreurs concerne la qualité des messages d'erreur ?\",\n    \"choix\": [\n      \"La protection contre les erreurs détecte et prévient les erreurs de saisie ou les actions aux conséquences graves.\",\n      \"La qualité des messages d'erreur porte sur leur pertinence, leur lisibilité et leur exactitude.\",\n      \"La correction des erreurs met à la disposition de l'utilisateur des moyens simples pour corriger.\",\n      \"Cela concerne la suppression définitive.\"\n    ],\n    \"bonne_reponse\": 1,\n    \"citation\": \"La qualité des messages d'erreur porte sur leur pertinence, leur lisibilité et leur exactitude : un bon message dit ce qui s'est passé et comment corriger.\"\n  },\n  {\n    \"question\": \"Quel des quatre choix décrit une caractéristique de la correction des erreurs ?\",\n    \"choix\": [\n      \"La correction des erreurs demande une confirmation avant une suppression définitive.\",\n      \"La correction des erreurs met à la disposition de l'utilisateur des moyens simples pour corriger.\",\n      \"La correction des erreurs concerne la suppression définitive.\",\n      \"La correction des erreurs porte sur leur pertinence, leur lisibilité et leur exactitude.\"\n    ],\n    \"bonne_reponse\": 2,\n    \"citation\": \"La correction des erreurs met à la disposition de l'utilisateur des moyens simples pour corriger.\"\n  }\n]}",
+      "duree_s": 74.9,
+      "jetons_generes": 405,
+      "duree_generation_ns": 58324856000,
+      "format_demande": "schema"
+    },
+    {
+      "passage_id": "p6",
+      "brut": "{\"questions\": [\n  {\n    \"question\": \"Quel critère de conception en interface utilisateur est lié au lien entre un terme ou une icône et ce qu'il désigne ?\",\n    \"choix\": [\n      \"Homogénéité\",\n      \"Signifiance des codes et dénominations\",\n      \"Compatibilité\",\n      \"Ordre du formulaire papier\"\n    ],\n    \"bonne_reponse\": 1,\n    \"citation\": \"La signifiance des codes et dénominations concerne le lien entre un terme ou une icône et ce qu'il désigne.\"\n  },\n  {\n    \"question\": \"Quel critère de conception en interface utilisateur est illustré par une saisie qui suit l'ordre du formulaire papier dont l'utilisateur a l'habitude ?\",\n    \"choix\": [\n      \"Homogénéité\",\n      \"Signifiance des codes et dénominations\",\n      \"Compatibilité\",\n      \"Ordre du formulaire papier\"\n    ],\n    \"bonne_reponse\": 3,\n    \"citation\": \"Une saisie qui suit l'ordre du formulaire papier dont l'utilisateur a l'habitude en est un exemple.\"\n  }\n]}",
+      "duree_s": 56.8,
+      "jetons_generes": 311,
+      "duree_generation_ns": 41824042000,
+      "format_demande": "schema"
+    }
+  ]
+}
