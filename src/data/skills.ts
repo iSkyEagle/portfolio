@@ -138,7 +138,7 @@ export const skills: Skill[] = [
     title: 'Facteurs humains et IHM',
     short: 'Partir de l\'usage réel et mesurer ce que le système change.',
     description:
-      "Ma formation d'ergonome cognitif guide ce que je construis : je pars de l'usage réel et je mesure ce qu'un système change pour ses utilisateurs.",
+      "Mon métier d'ingénieur facteurs humains guide ce que je construis : je pars de l'usage réel et je mesure ce qu'un système change pour ses utilisateurs.",
     tools: ['Ergonomie cognitive', 'Critères de Bastien et Scapin', 'Protocole expérimental'],
     proofs: [
       {

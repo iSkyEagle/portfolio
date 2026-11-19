@@ -12,7 +12,7 @@ export function Home() {
           <h1 id="nom">Clément Emery</h1>
           <p className="lead">
             Je construis des outils d'I.A de bout en bout : agents et automatisations, LLM exécutés en local, applications
-            déployées. Ergonome cognitif de formation (Master 2 ESCSI), je les conçois et je les évalue du point de vue de
+            déployées. Ingénieur facteurs humains, formé en ergonomie cognitive (Master 2 ESCSI), je les conçois et je les évalue du point de vue de
             leurs utilisateurs.
           </p>
         </div>
