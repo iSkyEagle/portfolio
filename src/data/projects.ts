@@ -111,7 +111,7 @@ export const projects: Project[] = [
     status: 'cours',
     category: 'Éducation · I.A générative',
     summary:
-      "Une application de révision pour un proche en études d'infirmière : on dépose ses cours en PDF, l'I.A les synthétise par chapitre et génère flashcards et QCM.",
+      "Une application de révision de cours : on dépose ses cours en PDF, l'I.A les synthétise par chapitre et génère flashcards et QCM.",
     tags: ['PWA', 'Supabase', 'Vercel', 'API Gemini'],
     details: [
       {
