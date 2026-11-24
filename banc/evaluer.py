@@ -77,6 +77,22 @@ def mots(texte: str) -> list[str]:
     return [m for m in trouves if (m.isdigit() or len(m) >= 3) and m not in MOTS_VIDES]
 
 
+def _decimal_ou_entier(texte: str) -> int | float:
+    valeur = float(texte)
+    return int(valeur) if valeur.is_integer() else valeur
+
+
+def _refuser_constante(nom: str):
+    raise ValueError(f"constante non standard : {nom}")
+
+
+def lire_json(texte: str):
+    """Lit du JSON comme JSON.parse en JavaScript, pour que le garde-fou de la plateforme
+    de révision (portage TypeScript de ces contrôles) rende les mêmes verdicts :
+    « 2.0 » vaut l'entier 2, NaN et Infinity sont refusés."""
+    return json.loads(texte, parse_float=_decimal_ou_entier, parse_constant=_refuser_constante)
+
+
 def extraire_questions(brut: str) -> tuple[list, str | None]:
     """Lit la réponse brute d'un modèle. Renvoie les questions et, en cas d'échec, la raison."""
     if not brut or not brut.strip():
@@ -86,14 +102,14 @@ def extraire_questions(brut: str) -> tuple[list, str | None]:
     if bloc:
         candidat = bloc.group(1).strip()
     try:
-        donnees = json.loads(candidat)
-    except json.JSONDecodeError:
+        donnees = lire_json(candidat)
+    except (ValueError, RecursionError):  # ValueError couvre json.JSONDecodeError
         debut, fin = candidat.find("{"), candidat.rfind("}")
         if debut == -1 or fin <= debut:
             return [], "JSON illisible"
         try:
-            donnees = json.loads(candidat[debut : fin + 1])
-        except json.JSONDecodeError:
+            donnees = lire_json(candidat[debut : fin + 1])
+        except (ValueError, RecursionError):
             return [], "JSON illisible"
     if isinstance(donnees, dict):
         donnees = donnees.get("questions")
@@ -130,7 +146,8 @@ def reponse_appuyee(q: dict) -> bool:
     les accords (« critère » et « critères »).
     """
     bonne = mots(q["choix"][q["bonne_reponse"]])
-    citation = {m[:5] for m in mots(q.get("citation") or "")}
+    texte_citation = q.get("citation") if isinstance(q.get("citation"), str) else ""
+    citation = {m[:5] for m in mots(texte_citation)}
     if not bonne or not citation:
         return False
     return sum(m[:5] in citation for m in bonne) / len(bonne) >= SEUIL_APPUI

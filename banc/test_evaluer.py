@@ -37,6 +37,18 @@ class ExtraireQuestions(unittest.TestCase):
     def test_signale_un_json_tronque(self):
         self.assertEqual(evaluer.extraire_questions('{"questions": [{"question": "coup')[1], "JSON illisible")
 
+    def test_lit_une_position_ecrite_en_decimal_comme_un_entier(self):
+        # Même lecture que JSON.parse, utilisé par le garde-fou de la plateforme de révision.
+        questions, _ = evaluer.extraire_questions('{"questions": [{"bonne_reponse": 1.0}, {"bonne_reponse": 1.5}]}')
+        self.assertEqual([q["bonne_reponse"] for q in questions], [1, 1.5])
+        self.assertIsInstance(questions[0]["bonne_reponse"], int)
+        self.assertTrue(evaluer.format_valide(question(bonne_reponse=questions[0]["bonne_reponse"])))
+        self.assertFalse(evaluer.format_valide(question(bonne_reponse=questions[1]["bonne_reponse"])))
+
+    def test_refuse_nan_et_infinity(self):
+        self.assertEqual(evaluer.extraire_questions('{"questions": [{"bonne_reponse": NaN}]}')[1], "JSON illisible")
+        self.assertEqual(evaluer.extraire_questions('{"questions": [{"bonne_reponse": Infinity}]}')[1], "JSON illisible")
+
     def test_signale_une_reponse_vide_ou_sans_liste(self):
         self.assertEqual(evaluer.extraire_questions("  ")[1], "réponse vide")
         self.assertEqual(evaluer.extraire_questions('{"reponse": 3}')[1], "pas de liste de questions")
@@ -82,6 +94,12 @@ class Controles(unittest.TestCase):
         q = question(citation="Elle est surtout utilisée en inspection ergonomique")
         self.assertFalse(evaluer.reponse_appuyee(q))
 
+    def test_citation_non_textuelle(self):
+        # Une citation qui n'est pas du texte faisait planter toute l'évaluation.
+        self.assertFalse(evaluer.reponse_appuyee(question(citation=42)))
+        self.assertFalse(evaluer.reponse_appuyee(question(citation=["La grille compte huit critères principaux"])))
+        self.assertFalse(evaluer.citation_fidele(question(citation=42), PASSAGE))
+
     def test_indice_de_longueur(self):
         q = question(choix=["Six", "Huit critères principaux répartis en plusieurs familles distinctes", "Dix", "Douze"])
         self.assertFalse(evaluer.sans_indice_longueur(q))
@@ -123,6 +141,12 @@ class EvaluerModele(unittest.TestCase):
         self.assertEqual(questions, [])
         self.assertEqual(resume["questions_attendues"], 2)
         self.assertEqual(resume["echecs"], [{"passage_id": "p1", "raison": "JSON illisible"}])
+
+    def test_une_citation_non_textuelle_ne_bloque_pas_l_evaluation(self):
+        resume, questions = evaluer.evaluer_modele(self.sortie(self.appel([question(citation=42), question(question="Autre énoncé sans rapport ?")])), self.passages)
+        self.assertEqual(resume["questions_obtenues"], 2)
+        self.assertFalse(questions[0]["tous_controles"])
+        self.assertTrue(questions[1]["tous_controles"])
 
     def test_ne_juge_que_le_nombre_de_questions_demande(self):
         trois = [question(), question(question="Autre énoncé sans rapport ?"), question(question="Troisième énoncé différent ?")]
